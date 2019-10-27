@@ -11,8 +11,7 @@
  */
 int _printf(char *format, ...)
 {
-	unsigned int i = 0, numtemp;
-	unsigned int count = 0;
+	unsigned int i = 0, numtemp, count = 0;
 	char *strtemp;
 	va_list arg;
 
@@ -20,11 +19,6 @@ int _printf(char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			count++;
-		}
 		if (format[i] == '%')
 		{
 			switch (format[i + 1])
@@ -44,6 +38,11 @@ int _printf(char *format, ...)
 							i++;
 							break;
 			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			count++;
 		}
 	}
 
