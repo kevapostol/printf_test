@@ -4,7 +4,7 @@
 
 void _printf(char *format, ...)
 {
-	char *traverse
+	char *traverse;
 	unsigned int i = 0;
 
 	va_list arg;
