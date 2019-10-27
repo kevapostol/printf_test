@@ -59,13 +59,17 @@ void *addr;
 
 len = _printf("Let's try to printf a simple sentence.\n");
 len2 = printf("Let's try to printf a simple sentence.\n");
+printf("Len:[%d]\n", len2);
 ui = (unsigned int)INT_MAX + 1024;
 addr = (void *)0x7ffe637541f0;
 len = _printf("Character:[%c]\n", 'H');
 len2 = printf("Character:[%c]\n", 'H');
+printf("Len:[%d]\n", len2);
 len = _printf("String:[%s]\n", "I am a string !");
 len2 = printf("String:[%s]\n", "I am a string !");
+printf("Len:[%d]\n", len2);
 len = _printf("Percent:[%%]\n");
 len2 = printf("Percent:[%%]\n");
+printf("Len:[%d]\n", len2);
 return (0);
 }
