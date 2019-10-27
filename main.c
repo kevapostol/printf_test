@@ -21,8 +21,9 @@ void _printf(char *format, ...)
 		}
 
 		traverse++;
-	va_end(arg);
+
 	}
+	va_end(arg);
 }
 /**
  * main - Entry point
