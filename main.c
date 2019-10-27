@@ -5,19 +5,18 @@
 void _printf(char *format, ...)
 {
 	char *traverse;
-	unsigned int i;
+	unsigned int i = 0;
 	char *s;
 
 	va_list arg;
 
 	va_start(arg, format);
 
-	for (traverse = format; *traverse != '\0'; traverse++)
+	for (i = 0; traverse[i] != '\0'; i++)
 	{
-		while (*traverse != '%')
+		if (traverse[i] != '%')
 		{
-			putchar(*traverse);
-			traverse++;
+			putchar(traverse[i]);
 		}
 	}
 	va_end(arg);
