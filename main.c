@@ -65,8 +65,6 @@ ui = (unsigned int)INT_MAX + 1024;
 addr = (void *)0x7ffe637541f0;
 len = _printf("Character:[%c]\n", 'H');
 len2 = printf("Character:[%c]\n", 'H');
-_printf("Length:[%d, %i]\n", len, len);
-printf("Length:[%d, %i]\n", len2, len2);
 len = _printf("String:[%s]\n", "I am a string !");
 len2 = printf("String:[%s]\n", "I am a string !");
 len = _printf("Percent:[%%]\n");
