@@ -4,19 +4,18 @@
 
 int _printf(char *format, ...)
 {
-	unsigned int i = 0, j;
+	unsigned int i = 0, numtemp;;
 	unsigned int count = 0;
-	int numtemp;
 	char *strtemp;
 	va_list arg;
 
 	va_start(arg, format);
 
-	for (i = 0; format[i] != '\0'; i++)
-	{
+for (i = 0; format[i] != '\0'; i++)
+{
 		if (format[i] != '%')
 		{
-			putchar(format[i]);
+			_putchar(format[i]);
 			count++;
 		}
 
@@ -26,28 +25,23 @@ int _printf(char *format, ...)
 				{
 					case 'c' :
 								numtemp = va_arg(arg, int);
-								putchar((char) numtemp);
-								count++;
+								count += c_print(numtemp);
 								i++;
 								break;
 					case 's' :
 								strtemp = va_arg(arg, char *);
-								for (j = 0; strtemp[j] != '\0'; j++)
-								{
-									putchar(strtemp[j]);
-									count++;
-								}
+								count += s_print(strtemp);
 								i++;
 								break;
 					case '%' :
-									putchar('%');
-									count++;
-									i++;
+								count += p_print();
+								i++;
 								break;
+					default:
+								exit(100);
 				}
 		}
-	}
-
+}
 
 	va_end(arg);
 	return (count);
@@ -68,10 +62,10 @@ int main(void)
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-		len = _printf("Character:[%c]\n", 'H');
-    len2 = printf("Character:[%c]\n", 'H');
+    _printf("Length:[%d, %i]x\n", len, len);
+    printf("Length:[%d, %i]x\n", len2, len2);
+		len = _printf("Character:[%c]x\n", 'H');
+    len2 = printf("Character:[%c]x\n", 'H');
 		_printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
 		len = _printf("String:[%s]\n", "I am a string !");
