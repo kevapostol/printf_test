@@ -18,18 +18,20 @@ int _printf(char *format, ...)
 			putchar(format[i]);
 			count++;
 		}
+
+		if (format[i] == '%')
+		{
+			switch(format[i + 1])
+				{
+					case 'c' :
+								temp = va_arg(arg,int);		//Fetch char argument
+								putchar(temp + '0');
+								break;
+				}
+		}
 	}
 
-	if (format[i] == '%')
-	{
-		switch(format[i + 1])
-			{
-				case 'c' :
-							temp = va_arg(arg,int);		//Fetch char argument
-							putchar(temp + '0');
-							break;
-			}
-	}
+
 	va_end(arg);
 	return (count);
 }
