@@ -19,9 +19,6 @@ void _printf(char *format, ...)
 			putchar(*traverse);
 			traverse++;
 		}
-
-		traverse++;
-
 	}
 	va_end(arg);
 }
