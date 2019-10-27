@@ -4,9 +4,8 @@
 
 void _printf(char *format, ...)
 {
-	char *traverse;
+	char *traverse
 	unsigned int i = 0;
-	char *s;
 
 	va_list arg;
 
@@ -16,7 +15,7 @@ void _printf(char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			putchar(traverse[i]);
+			putchar(format[i]);
 		}
 	}
 	va_end(arg);
