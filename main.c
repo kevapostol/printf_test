@@ -15,32 +15,32 @@ int _printf(char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-			if (format[i] != '%')
-			{
-				_putchar(format[i]);
-				count++;
-			}
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			count++;
+		}
 
-			if (format[i] == '%')
+		if (format[i] == '%')
+		{
+			switch (format[i + 1])
 			{
-				switch (format[i + 1])
-					{
-						case 'c':
-									numtemp = va_arg(arg, int);
-									count += c_print(numtemp);
-									i++;
-									break;
-						case 's':
-									strtemp = va_arg(arg, char *);
-									count += s_print(strtemp);
-									i++;
-									break;
-						case '%':
-									count += p_print();
-									i++;
-									break;
-					}
+				case 'c':
+							numtemp = va_arg(arg, int);
+							count += c_print(numtemp);
+							i++;
+							break;
+				case 's':
+							strtemp = va_arg(arg, char *);
+							count += s_print(strtemp);
+							i++;
+							break;
+				case '%':
+							count += p_print();
+							i++;
+							break;
 			}
+		}
 	}
 
 	va_end(arg);
