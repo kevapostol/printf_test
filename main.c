@@ -19,6 +19,15 @@ int _printf(char *format, ...)
 			count++;
 		}
 	}
+
+	switch(format[i + 1])
+		{
+			case 'c' : i = va_arg(arg,int);		//Fetch char argument
+						putchar(i);
+						count++;
+						i++;
+						break;
+		}
 	va_end(arg);
 	return (count);
 }
@@ -40,5 +49,7 @@ int main(void)
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
+		_printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
 	return (0);
 }
