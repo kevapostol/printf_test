@@ -4,9 +4,10 @@
 
 int _printf(char *format, ...)
 {
-	unsigned int i = 0;
+	unsigned int i = 0, j;
 	unsigned int count = 0;
-	int temp;
+	int numtemp;
+	char *strtemp;
 	va_list arg;
 
 	va_start(arg, format);
@@ -24,9 +25,18 @@ int _printf(char *format, ...)
 			switch(format[i + 1])
 				{
 					case 'c' :
-								temp = va_arg(arg,int);		//Fetch char argument
+								numtemp = va_arg(arg,int);
 								putchar((char) temp);
 								count++;
+								i++;
+								break;
+					case 's' :
+								strtemp = va_arg(arg,int);
+								for (j = 0; strtemp[j] != '\0'; j++)
+								{
+									putchar(strtemp[j]);
+									count++;
+								}
 								i++;
 								break;
 				}
@@ -57,6 +67,10 @@ int main(void)
     printf("Length:[%d, %i]\n", len2, len2);
 		len = _printf("Character:[%c]\n", 'H');
     len2 = printf("Character:[%c]\n", 'H');
+		_printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+		len = _printf("String:[%s]\n", "I am a string !");
+    len2 = printf("String:[%s]\n", "I am a string !");
 		_printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
 	return (0);
