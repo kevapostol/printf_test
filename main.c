@@ -1,11 +1,12 @@
 #include <limits.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
 
 int _printf(char *format, ...)
 {
-	unsigned int i = 0, numtemp;;
+	unsigned int i = 0, numtemp;
 	unsigned int count = 0;
 	char *strtemp;
 	va_list arg;
@@ -22,19 +23,19 @@ for (i = 0; format[i] != '\0'; i++)
 
 		if (format[i] == '%')
 		{
-			switch(format[i + 1])
+			switch (format[i + 1])
 				{
-					case 'c' :
+					case 'c':
 								numtemp = va_arg(arg, int);
 								count += c_print(numtemp);
 								i++;
 								break;
-					case 's' :
+					case 's':
 								strtemp = va_arg(arg, char *);
 								count += s_print(strtemp);
 								i++;
 								break;
-					case '%' :
+					case '%':
 								count += p_print();
 								i++;
 								break;
