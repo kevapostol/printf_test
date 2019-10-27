@@ -39,4 +39,5 @@ void _printf(char *format, ...)
 
 		traverse++;
 	va_end(arg);
+	}
 }
