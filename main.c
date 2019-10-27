@@ -42,8 +42,7 @@ int _printf(char *format, ...)
 					case '%' :
 									putchar('%');
 									count++;
-								}
-								i++;
+									i++;
 								break;
 				}
 		}
