@@ -23,7 +23,7 @@ int _printf(char *format, ...)
 		{
 			switch (format[i + 1])
 			{
-				case 'c': count += c_print(va_arg(arg, int)); 
+				case 'c': count += c_print(va_arg(arg, int));
 				break;
 
 				case 's':
