@@ -25,15 +25,15 @@ int _printf(char *format, ...)
 			{
 				case 'c':
 							count += c_print(va_arg(arg, int));
-							i++
+							i++;
 							break;
 				case 's':
 							count += s_print(va_arg(arg, char *));
-							i++
+							i++;
 							break;
 				case '%':
 							count += p_print();
-							i++
+							i++;
 							break;
 				default:
 							exit(100);
