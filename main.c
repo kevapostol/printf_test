@@ -32,6 +32,8 @@ int _printf(char *format, ...)
 				case '%':
 							count += p_print(i);
 							break;
+				default:
+							exit(100;
 			}
 		}
 		else
