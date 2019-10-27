@@ -6,7 +6,7 @@ int _printf(char *format, ...)
 {
 	unsigned int i = 0;
 	unsigned int count = 0;
-	int temp;
+	char temp;
 	va_list arg;
 
 	va_start(arg, format);
@@ -26,7 +26,7 @@ int _printf(char *format, ...)
 			{
 				case 'c' :
 							temp = va_arg(arg,int);		//Fetch char argument
-							putchar((char) i);
+							putchar(i);
 							i++;
 							break;
 			}
