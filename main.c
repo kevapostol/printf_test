@@ -24,13 +24,11 @@ int _printf(char *format, ...)
 			switch (format[i + 1])
 			{
 				case 'c':
-							numtemp = va_arg(arg, int);
-							count += c_print(numtemp);
+							count += c_print(va_arg(arg, int));
 							i++;
 							break;
 				case 's':
-							strtemp = va_arg(arg, char *);
-							count += s_print(strtemp);
+							count += s_print(va_arg(arg, char *));
 							i++;
 							break;
 				case '%':
