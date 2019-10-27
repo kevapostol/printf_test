@@ -27,7 +27,6 @@ int _printf(char *format, ...)
 				case 'c' :
 							temp = va_arg(arg,int);		//Fetch char argument
 							putchar((char) i);
-							count++;
 							i++;
 							break;
 			}
