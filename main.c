@@ -6,7 +6,7 @@ int _printf(char *format, ...)
 {
 	unsigned int i = 0;
 	unsigned int count = 0;
-	char temp;
+	int temp;
 	va_list arg;
 
 	va_start(arg, format);
