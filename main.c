@@ -33,7 +33,7 @@ int _printf(char *format, ...)
 							count += p_print(i);
 							break;
 				default:
-							exit(100;
+							exit(100);
 			}
 		}
 		else
