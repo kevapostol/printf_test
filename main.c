@@ -25,13 +25,13 @@ int _printf(char *format, ...)
 			switch(format[i + 1])
 				{
 					case 'c' :
-								numtemp = va_arg(arg,int);
+								numtemp = va_arg(arg, int);
 								putchar((char) temp);
 								count++;
 								i++;
 								break;
 					case 's' :
-								strtemp = va_arg(arg,int);
+								strtemp = va_arg(arg, char *);
 								for (j = 0; strtemp[j] != '\0'; j++)
 								{
 									putchar(strtemp[j]);
