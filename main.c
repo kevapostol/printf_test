@@ -26,7 +26,7 @@ int _printf(char *format, ...)
 				{
 					case 'c' :
 								numtemp = va_arg(arg, int);
-								putchar((char) temp);
+								putchar((char) numtemp);
 								count++;
 								i++;
 								break;
