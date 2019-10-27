@@ -2,7 +2,6 @@
 
 int c_print (int character)
 {
-	*idx++;
 	_putchar((char) character);
 	return (1);
 }
