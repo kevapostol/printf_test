@@ -20,15 +20,18 @@ int _printf(char *format, ...)
 		}
 	}
 
-	switch(format[i + 1])
-		{
-			case 'c' :
-						temp = va_arg(arg,int);		//Fetch char argument
-						putchar(i + '0');
-						count++;
-						i++;
-						break;
-		}
+	if (format[i] == '%')
+	{
+		switch(format[i + 1])
+			{
+				case 'c' :
+							temp = va_arg(arg,int);		//Fetch char argument
+							putchar(i + '0');
+							count++;
+							i++;
+							break;
+			}
+	}
 	va_end(arg);
 	return (count);
 }
