@@ -39,6 +39,12 @@ int _printf(char *format, ...)
 								}
 								i++;
 								break;
+					case '%' :
+									putchar('%');
+									count++;
+								}
+								i++;
+								break;
 				}
 		}
 	}
@@ -71,6 +77,10 @@ int main(void)
     printf("Length:[%d, %i]\n", len2, len2);
 		len = _printf("String:[%s]\n", "I am a string !");
     len2 = printf("String:[%s]\n", "I am a string !");
+		_printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+		len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
 		_printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
 	return (0);
