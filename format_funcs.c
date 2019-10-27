@@ -1,13 +1,13 @@
 #include "holberton.h"
 
-int c_print (int character, unsigned int *idx)
+int c_print (int character)
 {
 	*idx++;
 	_putchar((char) character);
 	return (1);
 }
 
-int s_print(char *str, unsigned int *idx)
+int s_print(char *str)
 {
 	*idx++;
 	int i = 0;
@@ -22,7 +22,7 @@ int s_print(char *str, unsigned int *idx)
 	return (count);
 }
 
-int p_print(unsigned int *idx)
+int p_print()
 {
 	*idx++;
 	_putchar('%');
