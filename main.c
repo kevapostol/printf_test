@@ -12,9 +12,9 @@ void _printf(char *format, ...)
 
 	va_start(arg, format);
 
-	for (i = 0; traverse[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (traverse[i] != '%')
+		if (format[i] != '%')
 		{
 			putchar(traverse[i]);
 		}
