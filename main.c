@@ -16,7 +16,7 @@ int _printf(char *format, ...)
 		if (format[i] != '%')
 		{
 			putchar(format[i]);
-			count++
+			count++;
 		}
 	}
 	va_end(arg);
