@@ -55,9 +55,9 @@ int main(void)
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
-		_printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-		len = _printf("Length:[%d, %i]\n", len, len);
-    len2 = printf("Length:[%d, %i]\n", len2, len2);
+		len = _printf("Character:[%c]\n", 'H');
+    len2 = printf("Character:[%c]\n", 'H');
+		_printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
 	return (0);
 }
