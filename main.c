@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-void _printf(char *format, ...)
+int _printf(char *format, ...)
 {
-	char *traverse;
 	unsigned int i = 0;
+	unsigned int count = 0;
 
 	va_list arg;
 
@@ -16,9 +16,11 @@ void _printf(char *format, ...)
 		if (format[i] != '%')
 		{
 			putchar(format[i]);
+			count++
 		}
 	}
 	va_end(arg);
+	return (count);
 }
 /**
  * main - Entry point
@@ -27,6 +29,16 @@ void _printf(char *format, ...)
  */
 int main(void)
 {
-	_printf("Let's try to printf a simple sentence.\n");
+	int len;
+    int len2;
+    unsigned int ui;
+    void *addr;
+
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    ui = (unsigned int)INT_MAX + 1024;
+    addr = (void *)0x7ffe637541f0;
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
 	return (0);
 }
