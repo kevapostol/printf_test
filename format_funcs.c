@@ -9,7 +9,6 @@ int c_print (int character)
 
 int s_print(char *str)
 {
-	*idx++;
 	int i = 0;
 	int count = 0;
 
@@ -24,7 +23,6 @@ int s_print(char *str)
 
 int p_print()
 {
-	*idx++;
 	_putchar('%');
 	return (1);
 }
