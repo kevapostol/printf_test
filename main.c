@@ -4,6 +4,11 @@
 #include <stdarg.h>
 #include "holberton.h"
 
+/**
+ * _printf - Entry point
+ * @format: format
+ * Return: integer
+ */
 int _printf(char *format, ...)
 {
 	unsigned int i = 0, numtemp;
@@ -20,7 +25,6 @@ int _printf(char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
-
 		if (format[i] == '%')
 		{
 			switch (format[i + 1])
