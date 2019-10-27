@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 int c_print (int character)
 {
 	_putchar((char) character);
